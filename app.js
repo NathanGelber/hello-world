@@ -10,10 +10,8 @@ const FONT_OPTIONS = [
 ];
 
 const THEMES = {
-  paper: { name: "Paper Cream", bg: "#f7f2e8", panel: "#efe8db", text: "#1f2228", muted: "#66707a", accent: "#7a88a6", border: "rgba(0,0,0,.11)", editor: "rgba(255,255,255,.62)" },
-  linen: { name: "Linen", bg: "#f8f5ef", panel: "#f1ede4", text: "#202329", muted: "#68707b", accent: "#7f8eaa", border: "rgba(0,0,0,.1)", editor: "rgba(255,255,255,.7)" },
-  blossom: { name: "Soft Blossom", bg: "#f7eff0", panel: "#f0e6e8", text: "#2a2427", muted: "#746a70", accent: "#9a7b8d", border: "rgba(0,0,0,.1)", editor: "rgba(255,255,255,.68)" },
-  mist: { name: "Misty Blue", bg: "#eef3f7", panel: "#e5ebf1", text: "#1f2730", muted: "#677587", accent: "#6e87aa", border: "rgba(0,0,0,.1)", editor: "rgba(255,255,255,.68)" }
+  cream: { name: "Cream", bg: "#f6e9d8", panel: "#efdfc9", text: "#2a241e", muted: "#6f6458", accent: "#b8875b", border: "rgba(60,40,20,.18)", editor: "#f3e4cf" },
+  ftpink: { name: "FT Pink", bg: "#fff1e5", panel: "#f8e3d1", text: "#2b211b", muted: "#6f5f54", accent: "#c88f6a", border: "rgba(70,45,30,.18)", editor: "#fbe9da" }
 };
 
 const $ = (id) => document.getElementById(id);
@@ -253,7 +251,7 @@ function renderTabs() {
 }
 
 function applyAppearance() {
-  const theme = THEMES[state.theme] || THEMES.paper;
+  const theme = THEMES[state.theme] || THEMES.cream;
   document.documentElement.style.setProperty("--bg", theme.bg);
   document.documentElement.style.setProperty("--panel", theme.panel);
   document.documentElement.style.setProperty("--text", theme.text);
@@ -296,7 +294,7 @@ function ensureActiveDoc() {
 }
 
 function sanitizeState() {
-  if (!THEMES[state.theme]) state.theme = "paper";
+  if (!THEMES[state.theme]) state.theme = "cream";
   if (!FONT_OPTIONS.some((f) => f.label === state.font)) state.font = FONT_OPTIONS[0].label;
   if (typeof state.customFont !== "string") state.customFont = "";
   if (!Array.isArray(state.closed)) state.closed = [];
@@ -320,7 +318,7 @@ function loadState() {
     activeId: "",
     font: "Source Sans 3",
     customFont: "",
-    theme: "paper"
+    theme: "cream"
   };
 }
 

@@ -1,11 +1,11 @@
 :root {
-  --bg: #f7f2e8;
-  --panel: #efe8db;
-  --text: #1f2228;
-  --muted: #66707a;
-  --accent: #7a88a6;
-  --border: rgba(0, 0, 0, 0.11);
-  --editor-bg: rgba(255, 255, 255, 0.62);
+  --bg: #f6e9d8;
+  --panel: #efdfc9;
+  --text: #2a241e;
+  --muted: #6f6458;
+  --accent: #b8875b;
+  --border: rgba(60, 40, 20, 0.18);
+  --editor-bg: #f3e4cf;
   --font: "Source Sans 3", "Inter", system-ui, -apple-system, sans-serif;
 }
 
@@ -14,7 +14,7 @@ body {
   margin: 0;
   min-height: 100vh;
   font-family: var(--font);
-  background: radial-gradient(circle at top, rgba(255,255,255,0.5), transparent 44%), var(--bg);
+  background: var(--bg);
   color: var(--text);
 }
 
@@ -32,7 +32,7 @@ button, select, input {
   border: 1px solid var(--border);
   background: var(--panel);
   color: var(--text);
-  border-radius: .75rem;
+  border-radius: 2px;
   padding: .5rem .78rem;
   font: inherit;
 }
@@ -42,18 +42,18 @@ button:hover, select:hover, input:hover { border-color: var(--accent); }
 
 .tab-strip-wrap {
   border: 1px solid var(--border);
-  border-radius: 1rem;
+  border-radius: 2px;
   background: var(--panel);
-  padding: .42rem;
+  padding: .35rem;
 }
-.tab-strip { display: flex; gap: .4rem; overflow-x: auto; }
+.tab-strip { display: flex; gap: .35rem; overflow-x: auto; }
 .tab {
   display: inline-flex;
   align-items: center;
   gap: .42rem;
   border: 1px solid transparent;
-  border-radius: .72rem;
-  padding: .44rem .74rem;
+  border-radius: 2px;
+  padding: .42rem .7rem;
   cursor: pointer;
   white-space: nowrap;
   max-width: 230px;
@@ -67,24 +67,24 @@ button:hover, select:hover, input:hover { border-color: var(--accent); }
   text-transform: uppercase;
   color: var(--muted);
   border: 1px solid var(--border);
-  border-radius: 999px;
-  padding: .1rem .35rem;
+  border-radius: 2px;
+  padding: .08rem .28rem;
 }
 
 .editor-wrap {
-  margin-top: .8rem;
+  margin-top: .7rem;
   border: 1px solid var(--border);
-  border-radius: 1rem;
+  border-radius: 2px;
   background: var(--editor-bg);
-  padding: 1.05rem;
+  padding: 1rem;
 }
 .doc-title {
   width: 100%;
   border: none;
   border-bottom: 1px solid var(--border);
   background: transparent;
-  padding: .55rem 0 .62rem;
-  font-size: 1.22rem;
+  padding: .5rem 0 .6rem;
+  font-size: 1.2rem;
   font-weight: 620;
   color: var(--text);
 }
@@ -92,12 +92,12 @@ button:hover, select:hover, input:hover { border-color: var(--accent); }
 .editor {
   width: 100%;
   min-height: 65vh;
-  margin-top: .9rem;
+  margin-top: .85rem;
   border: none;
   background: transparent;
   resize: vertical;
   color: var(--text);
-  font: 1.08rem/1.78 var(--font);
+  font: 1.08rem/1.76 var(--font);
 }
 .status-row { margin-top: .5rem; display: flex; justify-content: flex-end; }
 .word-pill {
@@ -105,29 +105,29 @@ button:hover, select:hover, input:hover { border-color: var(--accent); }
   color: var(--muted);
   background: var(--panel);
   border: 1px solid var(--border);
-  border-radius: 999px;
-  padding: .15rem .5rem;
+  border-radius: 2px;
+  padding: .14rem .45rem;
 }
 
 .palette {
   width: min(500px, 92vw);
   border: 1px solid var(--border);
-  border-radius: .95rem;
+  border-radius: 2px;
   background: var(--panel);
   color: var(--text);
 }
-.palette::backdrop { background: rgba(20, 20, 20, .2); }
-.palette-body { padding: .72rem; }
+.palette::backdrop { background: rgba(30, 20, 10, .2); }
+.palette-body { padding: .62rem; }
 #palette-input {
   width: 100%;
   border: 1px solid var(--border);
-  border-radius: .65rem;
-  padding: .62rem;
+  border-radius: 2px;
+  padding: .58rem;
   background: var(--editor-bg);
   color: var(--text);
 }
-#palette-results { list-style: none; margin: .5rem 0 0; padding: 0; max-height: 220px; overflow: auto; }
-#palette-results li { padding: .48rem .54rem; border-radius: .55rem; cursor: pointer; }
+#palette-results { list-style: none; margin: .45rem 0 0; padding: 0; max-height: 220px; overflow: auto; }
+#palette-results li { padding: .45rem .52rem; border-radius: 2px; cursor: pointer; }
 #palette-results li.active,
 #palette-results li:hover { background: var(--editor-bg); }
 

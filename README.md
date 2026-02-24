@@ -6,7 +6,7 @@ A lightweight word processor prototype focused on ease of use, aesthetics, and s
 
 - Easy tab management: new/close/reopen tabs, pinned tabs, and quick switching shortcuts.
 - Curated typography with built-in presets and **custom font stack** support.
-- **Light-only matte themes** (Paper Cream, Linen, Soft Blossom, Misty Blue).
+- **Color themes** limited to Cream and FT Pink (no white/gray themes).
 - Calm editing surface with autosave and local session restore.
 - Command palette (`Ctrl/Cmd+P`) to jump between open documents.
 
