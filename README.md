@@ -1,2 +1,41 @@
-# hello-world
-hi
+# MatteWrite
+
+A lightweight word processor prototype focused on ease of use, aesthetics, and simplicity.
+
+## What it includes
+
+- Easy tab management: new/close/reopen tabs, pinned tabs, and quick switching shortcuts.
+- Curated typography with built-in presets and **custom font stack** support.
+- **Light-only matte themes** (Paper Cream, Linen, Soft Blossom, Misty Blue).
+- Calm editing surface with autosave and local session restore.
+- Command palette (`Ctrl/Cmd+P`) to jump between open documents.
+
+## Customize the font
+
+- Choose a preset from the first font dropdown.
+- Or type your own CSS font stack in **Custom font stack** and click **Apply font**.
+- Example custom stack:
+
+```text
+"Avenir Next", "Inter", system-ui, sans-serif
+```
+
+If the first font is not installed, the browser falls back automatically to the next one.
+
+## Keyboard shortcuts
+
+- `Ctrl/Cmd+N`: New document tab
+- `Ctrl/Cmd+W`: Close current tab
+- `Ctrl/Cmd+Shift+T`: Reopen last closed tab
+- `Ctrl/Cmd+P`: Command palette / quick switch
+- `Ctrl/Cmd+1..9`: Jump to tab position
+
+## Run
+
+Because this is a static app, you can open `index.html` directly, or use a simple local server:
+
+```bash
+python3 -m http.server 4173
+```
+
+Then visit `http://localhost:4173`.
