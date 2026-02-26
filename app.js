@@ -1,4 +1,6 @@
 const STORAGE_KEY = "mattewrite-state-v2";
+const DEFAULT_FONT = "Inter";
+const DEFAULT_THEME = "ftpink";
 
 const FONT_OPTIONS = [
   { label: "Source Sans 3", stack: '"Source Sans 3", "Inter", system-ui, -apple-system, sans-serif' },
@@ -23,10 +25,10 @@ let paletteIndex = 0;
 init();
 
 function init() {
+  sanitizeState();
   setupControls();
   bindEvents();
   ensureActiveDoc();
-  sanitizeState();
   render();
 }
 
@@ -69,6 +71,7 @@ function bindEvents() {
   });
 
   $("apply-font-btn").addEventListener("click", applyCustomFont);
+  $("reset-look-btn").addEventListener("click", resetAppearance);
   $("custom-font-input").addEventListener("keydown", (e) => {
     if (e.key === "Enter") {
       e.preventDefault();
@@ -100,6 +103,18 @@ function bindEvents() {
 function applyCustomFont() {
   const value = $("custom-font-input").value.trim();
   state.customFont = value;
+  applyAppearance();
+  queueSave();
+}
+
+
+function resetAppearance() {
+  state.customFont = "";
+  state.font = DEFAULT_FONT;
+  state.theme = DEFAULT_THEME;
+  $("custom-font-input").value = "";
+  $("font-select").value = state.font;
+  $("theme-select").value = state.theme;
   applyAppearance();
   queueSave();
 }
@@ -251,7 +266,7 @@ function renderTabs() {
 }
 
 function applyAppearance() {
-  const theme = THEMES[state.theme] || THEMES.cream;
+  const theme = THEMES[state.theme] || THEMES[DEFAULT_THEME];
   document.documentElement.style.setProperty("--bg", theme.bg);
   document.documentElement.style.setProperty("--panel", theme.panel);
   document.documentElement.style.setProperty("--text", theme.text);
@@ -294,8 +309,8 @@ function ensureActiveDoc() {
 }
 
 function sanitizeState() {
-  if (!THEMES[state.theme]) state.theme = "cream";
-  if (!FONT_OPTIONS.some((f) => f.label === state.font)) state.font = FONT_OPTIONS[0].label;
+  if (!THEMES[state.theme]) state.theme = DEFAULT_THEME;
+  if (!FONT_OPTIONS.some((f) => f.label === state.font)) state.font = DEFAULT_FONT;
   if (typeof state.customFont !== "string") state.customFont = "";
   if (!Array.isArray(state.closed)) state.closed = [];
 }
@@ -316,9 +331,9 @@ function loadState() {
     docs: [],
     closed: [],
     activeId: "",
-    font: "Source Sans 3",
+    font: DEFAULT_FONT,
     customFont: "",
-    theme: "cream"
+    theme: DEFAULT_THEME
   };
 }
 

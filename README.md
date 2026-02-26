@@ -39,3 +39,10 @@ python3 -m http.server 4173
 ```
 
 Then visit `http://localhost:4173`.
+
+## If it looks different from the screenshot
+
+This app saves appearance settings in `localStorage`. If you previously changed fonts/themes, your local run may not match screenshots.
+
+- Click **Reset look** in the toolbar to return to the default screenshot style (FT Pink + Inter).
+- Or clear site storage in your browser devtools and reload.
