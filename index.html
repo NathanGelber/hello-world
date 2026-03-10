@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MatteWrite</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="brand">MatteWrite</div>
+      <div class="toolbar">
+        <button id="new-tab-btn" title="New document (Ctrl/Cmd+N)">New</button>
+        <button id="pin-tab-btn" title="Keep current tab at the front">Keep</button>
+        <button id="close-tab-btn" title="Close current tab (Ctrl/Cmd+W)">Close</button>
+        <button id="reopen-tab-btn" title="Reopen last closed tab (Ctrl/Cmd+Shift+T)">Reopen</button>
+      </div>
+      <div class="controls">
+        <select id="font-select" title="Font family" aria-label="Font family"></select>
+        <input id="custom-font-input" type="text" placeholder="Custom font stack (optional)" aria-label="Custom font stack" />
+        <button id="apply-font-btn" title="Apply custom font stack">Apply font</button>
+        <button id="reset-look-btn" title="Reset to screenshot look">Reset look</button>
+        <select id="theme-select" title="Theme" aria-label="Theme"></select>
+      </div>
+    </header>
+
+    <section class="tab-strip-wrap">
+      <div id="tab-strip" class="tab-strip"></div>
+    </section>
+
+    <main class="editor-wrap">
+      <input id="doc-title" class="doc-title" placeholder="Untitled document" />
+      <textarea id="editor" class="editor" spellcheck="true" placeholder="Start writing..."></textarea>
+      <div class="status-row">
+        <span id="word-count" class="word-pill">0 words</span>
+      </div>
+    </main>
+  </div>
+
+  <dialog id="command-palette" class="palette">
+    <form method="dialog" class="palette-body">
+      <input id="palette-input" type="text" placeholder="Jump to document..." autofocus />
+      <ul id="palette-results"></ul>
+    </form>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>
